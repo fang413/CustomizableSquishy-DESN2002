@@ -1,35 +1,22 @@
-# Softform — Personalization Studio
+# Softform — Customization Studio
 
-An interactive product configurator for the DESN2002 squishy design project. The website presents ergonomic grip geometry extracted from the group's Rhino model and demonstrates personalized sizing, appearance and resistance preferences.
+DESN2002 interactive ergonomic squishy configurator. This version retains the Version 3 blue/orange palette and Roboto typography.
 
-## Features
+## Use
 
-- Interactive 3D preview with rotation and zoom
-- Three selectable product forms
-- Hand length and palm width adjustment
-- Overall and individual finger resistance controls
-- Exterior and conceptual lattice views
-- Color customization and configuration export
+Open `index.html` in Chrome or Safari. Choose a form, hand dimensions, resistance preferences and color. Click **Create my squishy** to see the order summary.
 
-## Run locally
+- **Download design package**: ZIP containing an exterior STL, CSV order sheet and printing notes.
+- **3D model (.stl)**: closed, scaled exterior mesh from the Rhino-derived website geometry. Coordinates are in millimetres; import as mm. The lowest point is set to Z=0.
+- **Order sheet (.csv)**: open in Excel or Numbers. Includes customer choices, target dimensions, scale factors and all five finger preferences.
+- **Print / save as PDF**: opens the browser print dialog for a readable summary.
 
-Open `index.html` in a modern browser such as Chrome or Safari. No installation, server, Rhino or Grasshopper is required. The model and application code are embedded in the HTML. Google Fonts supplies Roboto and Roboto Condensed when an internet connection is available; fallback fonts are used otherwise.
+All files are generated locally. No customer information is submitted, no order is placed, and no backend is needed.
 
-## Publish with GitHub Pages
+## Manufacturing limitations
 
-1. Upload `index.html` and `README.md` to the root of the GitHub repository.
-2. Commit the files to the `main` branch.
-3. In **Settings → Pages**, choose **Deploy from a branch**, then `main` and `/ (root)`.
-4. Save and open the published website after deployment succeeds.
+The STL is a fit prototype exterior, not the finished graded-lattice squishy. It does not include the 1.2 mm shell or 10 mm BC lattice, and selecting resistance does not change the exterior STL. A slicer's conventional infill is not equivalent to the intended graded lattice. The original Grasshopper/Kangaroo/Crystallon definition must be run separately to create the final design. Transfer the CSV settings, verify radii, shell, union, print process, support/powder removal and mechanical response before customer manufacture. No material or comfort validation is implied.
 
-## Design prototype
+## GitHub Pages
 
-The exterior preview uses geometry extracted from the Rhino model. The sizing rules, resistance settings and lattice preview are illustrative design concepts rather than validated mechanical predictions or manufacturing-ready output. The website does not execute Grasshopper or Karamba3D.
-
-## Visual identity
-
-- Primary interaction color: `#70c3d6`
-- Main action and heading accent: `#e88232`
-- Neutral palette: black, white and gray
-- Headings: Roboto Condensed
-- Interface text and sliders: Roboto
+Upload `index.html` and `README.md` to the root of the existing repository and commit directly to `main`. The existing Pages URL remains unchanged. The 3D model and code are embedded in the HTML; Google Fonts loads online with local fallback fonts.
